@@ -22,7 +22,7 @@ export default function Home() {
 						voluptas quos omnis sequi?
 					</p>
 					<Button className='mt-4' asChild>
-						<Link href={'/add-job'}>get htarted</Link>
+						<Link href={'/add-job'}>get started</Link>
 					</Button>
 				</div>
 				<Image
