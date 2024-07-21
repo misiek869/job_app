@@ -1,6 +1,6 @@
 'use client'
 
 function loading() {
-	return <h1>Loading</h1>
+	return <h2 className='text-xl font-medium capitalize'>loading...</h2>
 }
 export default loading

@@ -1,7 +1,14 @@
-import React from 'react'
+import {
+	dehydrate,
+	HydrationBoundary,
+	QueryClient,
+} from '@tanstack/react-query'
+
+import { getAllJobsAction } from '@/utils/actions'
 
 const JobsPage = () => {
-	return <div>jobs</div>
+	const queryClient = new QueryClient()
+	return <HydrationBoundary state={dehydrate(queryClient)}></HydrationBoundary>
 }
 
 export default JobsPage
