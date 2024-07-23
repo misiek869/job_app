@@ -98,3 +98,5 @@ export const getAllJobsAction = async ({
 		return { jobs: [], count: 0, page: 1, totalPages: 0 }
 	}
 }
+
+export const deleteJobAction = async (id: string) => {}
