@@ -99,7 +99,7 @@ export const getAllJobsAction = async ({
 	}
 }
 
-export const deleteJobAction = async (id: string) => {
+export const deleteJobAction = async (id: string): Promise<JobType | null> => {
 	const userId = authenticateAndRedirect()
 
 	try {
