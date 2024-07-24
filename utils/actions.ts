@@ -115,3 +115,7 @@ export const deleteJobAction = async (id: string): Promise<JobType | null> => {
 		return null
 	}
 }
+
+export const getSingleJobAction = async (
+	id: string
+): Promise<JobType | null> => {}
