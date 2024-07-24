@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation'
 import { Prisma } from '@prisma/client'
 import dayjs from 'dayjs'
 import { CreateAndEditJobType, JobType, createAndEditJobSchema } from './types'
+import exp from 'constants'
 
 function authenticateAndRedirect(): string {
 	const { userId } = auth()
@@ -131,6 +132,28 @@ export const deleteJobAction = async (id: string): Promise<JobType | null> => {
 			},
 		})
 
+		return job
+	} catch (error) {
+		return null
+	}
+}
+
+export const updateJobAction = async (
+	id: string,
+	values: CreateAndEditJobType
+): Promise<JobType | null> => {
+	const userId = authenticateAndRedirect()
+
+	try {
+		const job: JobType = await prisma.job.update({
+			where: {
+				id,
+				clerkId: userId,
+			},
+			data: {
+				...values,
+			},
+		})
 		return job
 	} catch (error) {
 		return null
