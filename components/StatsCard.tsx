@@ -7,17 +7,19 @@ import {
 
 import { Skeleton } from './ui/skeleton'
 
-type StatsCardsProps = {
-	title: string
-	value: number
-}
+// type StatsCardsProps = {
+// 	title: string
+// 	value: number
+// }
 
 const StatsCard = ({ title, value }: { title: string; value: number }) => {
 	return (
-		<Card>
-			<CardHeader>
-				<CardTitle>{title}</CardTitle>
-				<CardDescription>{value}</CardDescription>
+		<Card className='bg-muted'>
+			<CardHeader className='flex flex-row justify-between items-center'>
+				<CardTitle className='capitalize'>{title}</CardTitle>
+				<CardDescription className='text-4xl font-extrabold text-primary mt-[0px!important]'>
+					{value}
+				</CardDescription>
 			</CardHeader>
 		</Card>
 	)
