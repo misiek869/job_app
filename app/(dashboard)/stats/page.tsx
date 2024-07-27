@@ -1,6 +1,9 @@
-import React from 'react'
+import { getStatsAction } from '@/utils/actions'
 
-const StatsPage = () => {
+const StatsPage = async () => {
+	const stats = await getStatsAction()
+
+	console.log(stats)
 	return <div>stats</div>
 }
 
