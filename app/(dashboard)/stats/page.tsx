@@ -1,9 +1,8 @@
-import { getStatsAction } from '@/utils/actions'
+import { getStatsAction, getChartsDataAction } from '@/utils/actions'
 
 const StatsPage = async () => {
-	const stats = await getStatsAction()
+	getChartsDataAction()
 
-	console.log(stats)
 	return <div>stats</div>
 }
 
