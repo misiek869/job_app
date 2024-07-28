@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { getAllJobsAction } from '@/utils/actions'
 import { useQuery } from '@tanstack/react-query'
 import BtnContainer from './BtnContainer'
+import BtnContainerComplex from './BtnContainerComplex'
 
 const JobsList = () => {
 	const searchParams = useSearchParams()
@@ -33,8 +34,11 @@ const JobsList = () => {
 			<div className='flex items-center justify-between mb-10'>
 				<h2 className='text-xl font-semibold capitalize'>{count} jobs found</h2>
 				{totalPages < 2 ? null : (
-					<BtnContainer currentPage={page} totalPages={totalPages} />
+					<BtnContainerComplex currentPage={page} totalPages={totalPages} />
 				)}
+				{/* {totalPages < 2 ? null : (
+					<BtnContainer currentPage={page} totalPages={totalPages} />
+				)} */}
 			</div>
 			<div className='grid md:grid-cols-2  gap-8'>
 				{jobs.map(job => {
