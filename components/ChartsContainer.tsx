@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 
 import { getChartsDataAction } from '@/utils/actions'
 import { useQuery } from '@tanstack/react-query'
@@ -18,7 +18,20 @@ const ChartsContainer = () => {
 		queryFn: () => getChartsDataAction(),
 	})
 
-	return <div>ChartsContainer</div>
+	if (isPending) {
+		return <h2>Loading...</h2>
+	}
+
+	if (data === null || data?.length < 1) {
+		return null
+	}
+
+	return (
+		<section>
+			<h1 className=''>Monthly Applications</h1>
+			<ResponsiveContainer></ResponsiveContainer>
+		</section>
+	)
 }
 
 export default ChartsContainer
