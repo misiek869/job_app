@@ -102,7 +102,7 @@ export const getAllJobsAction = async ({
 		})
 		const totalPages = Math.ceil(count / limit)
 
-		return { jobs, count: 0, page, totalPages }
+		return { jobs, count, page, totalPages }
 	} catch (error) {
 		return { jobs: [], count: 0, page: 1, totalPages: 0 }
 	}
